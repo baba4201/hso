@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 8px;
+        }
+
+        form input, form select, form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <h1>Hospital Management System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#patient-registration">Patient Registration</a></li>
+                    <li><a href="#doctor-appointment">Doctor Appointment</a></li>
+                    <li><a href="#billing">Billing</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section id="home" class="main-content">
+        <h2>Welcome to the Hospital Management System</h2>
+        <p>Our system allows efficient management of hospital services, including patient registration, doctor appointments, and billing. Explore the options below.</p>
+    </section>
+
+    <!-- Patient Registration Section -->
+    <section id="patient-registration">
+        <h2>Patient Registration</h2>
+        <form id="patientForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br>
+
+            <button type="submit">Register Patient</button>
+        </form>
+    </section>
+
+    <!-- Doctor Appointment Section -->
+    <section id="doctor-appointment">
+        <h2>Book Doctor Appointment</h2>
+        <form id="appointmentForm">
+            <label for="doctor-name">Choose Doctor:</label>
+            <select id="doctor-name" name="doctor-name">
+                <option value="dr_smith">Dr. Smith (Cardiologist)</option>
+                <option value="dr_jones">Dr. Jones (Pediatrician)</option>
+                <option value="dr_lee">Dr. Lee (Dermatologist)</option>
+            </select><br>
+
+            <label for="appointment-date">Select Date:</label>
+            <input type="date" id="appointment-date" name="appointment-date" required><br>
+
+            <label for="appointment-time">Select Time:</label>
+            <input type="time" id="appointment-time" name="appointment-time" required><br>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+
+    <!-- Billing Section -->
+    <section id="billing">
+        <h2>Billing</h2>
+        <p>View and pay your hospital bills here.</p>
+        <form id="billingForm">
+            <label for="bill-id">Bill ID:</label>
+            <input type="text" id="bill-id" name="bill-id" required><br>
+
+            <button type="submit">Check Bill</button>
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="contact-name">Your Name:</label>
+            <input type="text" id="contact-name" name="contact-name" required><br>
+
+            <label for="contact-email">Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required><br>
+
+            <label for="contact-message">Message:</label>
+            <textarea id="contact-message" name="contact-message" required></textarea><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript code for handling form submissions and alerts
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // Patient Registration Form
+            const patientForm = document.getElementById("patientForm");
+            patientForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Patient Registered Successfully!');
+            });
+
+            // Doctor Appointment Form
+            const appointmentForm = document.getElementById("appointmentForm");
+            appointmentForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Appointment Booked Successfully!');
+            });
+
+            // Billing Form
+            const billingForm = document.getElementById("billingForm");
+            billingForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Billing Information Retrieved!');
+            });
+
+            // Contact Form
+            const contactForm = document.getElementById("contactForm");
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Message Sent Successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
